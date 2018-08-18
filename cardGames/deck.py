@@ -5,9 +5,7 @@ class deck:
     cards = []
 
     def __init__(self):
-        self.reset()
-
-        # Shuffle the deck.
+        None
 
 
     def sortValue(self):
@@ -59,7 +57,7 @@ class deck:
 
 
     # Reset deck.
-    def reset(self):
+    def fill(self):
         for pattern in range(1, 4+1):
             for value in range(1, 13+1):
                 self.cards.append(card.card(value, pattern))
