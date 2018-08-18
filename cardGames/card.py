@@ -29,9 +29,17 @@ class card:
     def getValueName(self):
         return self.valueNames[self.value -1]
     
-
-    def getNames(self):
+    # Get: Ace of Spaces, or similar
+    def getName(self):
         return (self.getValueName() + " of " + self.getPatternName())
 
+    # Get: A  ♠, 10 ♦, or similar
     def getChars(self):
-        return (self.getValueChar() + " " + self.getPatternChar())
+        chars = self.getValueChar() + " "
+
+        # Due to 10 being two chars long
+        if self.getValueChar() != '10':
+            chars += " "
+        chars += self.getPatternChar()
+
+        return chars
